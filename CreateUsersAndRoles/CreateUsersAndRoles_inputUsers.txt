@@ -1,0 +1,5 @@
+#User|Password|EMail|FullName|Description|RolesThatTheUserBelongsTo
+John|changeme|johndoe@esri.com|John Doe|Server admin|admins
+Jane|changeme|janedoe@esri.com|Jane Doe|Server publisher|publishers,rangers
+Amy|changeme|amy@esri.com|Amy Doe|Summer intern|volunteers
+Bob|changeme|bob@esri.com|Bob Doe|Park visitor|visitors

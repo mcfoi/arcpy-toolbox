@@ -1,0 +1,6 @@
+#Role|Description|Privilege
+admins|Server Administrators|ADMINISTER
+publishers|Service Publishers|PUBLISH
+rangers|Park rangers|ACCESS
+volunteers|Volunteer staff|ACCESS
+visitors|Visitors|ACCESS
