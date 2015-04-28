@@ -24,6 +24,14 @@ projection = spatialReference.exportToString()
 
 # Process: Define Projection
 if rasters != None:
+    tot = len(rasters)
+    arcpy.AddMessage("{0} rasters found in input folder".format(str(tot)))
+    i = 0.0
     for raster in rasters:
+        i = i+1.0
         arcpy.DefineProjection_management(raster, projection)
+        msg = "{0:.2%} : Projection for raster {1} was set.".format((i/tot),str(raster))
+        arcpy.AddMessage(msg)
+else:
 
+    arcpy.AddWarning("No rasters found in input folder {0}".format(str(rasterFolder)))
