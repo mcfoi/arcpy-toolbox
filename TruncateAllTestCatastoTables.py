@@ -30,7 +30,7 @@ for fd in fdlistCATASTO:
     msg = "* * *\n"+"Truncating feature class {0}.".format(str(fd))
     arcpy.AddMessage(msg)
     # ### TRUNCATE IS DISABLED FOR SAFETY ###
-    #arcpy.TruncateTable_management(fd)
+    arcpy.TruncateTable_management(fd)
     msg = "{0} truncated.".format(str(fd))
     arcpy.AddWarning(msg)
 

@@ -11,6 +11,7 @@ import os
 import arcpy
 
 inputFolder = arcpy.GetParameterAsText(0)
+outputFolder = arcpy.GetParameterAsText(1)
 arcpy.env.workspace = inputFolder
 # Local variables:
 rasters = arcpy.ListRasters(None, "TIF")
@@ -18,7 +19,7 @@ rasters = arcpy.ListRasters(None, "TIF")
 for tiff in rasters:
 
     tifImage = os.path.join(inputFolder,tiff)
-    pngImage = os.path.join(inputFolder,tiff.replace("tif","png"))
+    pngImage = os.path.join(outputFolder,tiff.replace("tif","png"))
 
     tempEnvironment0 = arcpy.env.newPrecision
     arcpy.env.newPrecision = "SINGLE"
@@ -113,7 +114,7 @@ for tiff in rasters:
 
     arcpy.CopyRaster_management(tifImage, pngImage, "", "", "", "OneBitTo8Bit", "NONE", "", "NONE", "NONE")
 
-    arcpy.AddMessage("{0} was converted to .Png".format(tiff))
+    arcpy.AddMessage("{0} was converted to .Png in folder {1}".format(tiff, str(outputFolder)))
 
     arcpy.env.newPrecision = tempEnvironment0
     arcpy.env.autoCommit = tempEnvironment1
